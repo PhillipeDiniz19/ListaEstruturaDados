@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inverter Array</title>
+  </head>
+  <body>
+    <h2>Informe 3 números</h2>
+
+    <form id="numerosForm">
+      <label for="numero1">Número 1:</label>
+      <input type="number" id="numero1" name="numero1" required /><br /><br />
+
+      <label for="numero2">Número 2:</label>
+      <input type="number" id="numero2" name="numero2" required /><br /><br />
+
+      <label for="numero3">Número 3:</label>
+      <input type="number" id="numero3" name="numero3" required /><br /><br />
+
+      <button type="submit">Inverter Array</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+      document
+        .getElementById("numerosForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var numero1 = parseFloat(document.getElementById("numero1").value);
+          var numero2 = parseFloat(document.getElementById("numero2").value);
+          var numero3 = parseFloat(document.getElementById("numero3").value);
+          var numerosArray = [numero1, numero2, numero3];
+          var numerosInvertidos = numerosArray.reverse();
+          var resultadoDiv = document.getElementById("resultado");
+          resultadoDiv.innerHTML =
+            "Array com números invertidos: " + numerosInvertidos.join(", ");
+        });
+    </script>
+  </body>
+</html>
